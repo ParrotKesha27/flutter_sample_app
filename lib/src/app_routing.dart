@@ -12,8 +12,7 @@ final router = GoRouter(initialLocation: '/characters', routes: [
         routes: [
           GoRoute(
               path: '/characters',
-              builder: (context, state) => const CharactersScreen(),
-              routes: [GoRoute(path: '/characters/detail')]),
+              builder: (context, state) => const CharactersScreen()),
         ],
       ),
       StatefulShellBranch(
