@@ -1,4 +1,6 @@
-class Character {
+import 'package:equatable/equatable.dart';
+
+class Character extends Equatable {
   final int id;
   final String name;
   final Status status;
@@ -25,6 +27,22 @@ class Character {
       required this.episode,
       required this.url,
       required this.created});
+
+  @override
+  List<Object> get props => [
+        id,
+        name,
+        status,
+        species,
+        type,
+        gender,
+        origin,
+        location,
+        image,
+        episode,
+        url,
+        created
+      ];
 
   factory Character.fromJson(Map<String, dynamic> json) {
     return switch (json) {
@@ -64,7 +82,7 @@ enum Status { alive, dead, unknown }
 
 enum Gender { female, male, genderless, unknown }
 
-class LocationLink {
+class LocationLink extends Equatable {
   final String name;
   final String url;
 
@@ -72,6 +90,9 @@ class LocationLink {
     required this.name,
     required this.url,
   });
+
+  @override
+  List<Object> get props => [name, url];
 
   factory LocationLink.fromJson(Map<String, dynamic> json) {
     return switch (json) {

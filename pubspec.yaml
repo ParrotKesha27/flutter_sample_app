@@ -38,6 +38,8 @@ dependencies:
   go_router: ^14.0.1
   http: ^1.2.1
   format: ^1.5.1
+  flutter_bloc: ^8.1.5
+  equatable: ^2.0.5
 
 dev_dependencies:
   flutter_test:
