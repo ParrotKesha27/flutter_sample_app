@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sample_app/src/screens/characters/bloc/characters_bloc.dart';
+import 'package:flutter_sample_app/src/screens/characters/character_list_item.dart';
 
 class CharactersList extends StatefulWidget {
   const CharactersList({super.key});
@@ -39,9 +40,7 @@ class _CharactersListState extends State<CharactersList> {
               itemCount: state.characters.length,
               controller: _controller,
               itemBuilder: (context, index) {
-                var id = state.characters[index].id;
-                var name = state.characters[index].name;
-                return ListTile(title: Text("$id - $name"));
+                return CharacterListItem(character: state.characters[index]);
               });
       }
     });
